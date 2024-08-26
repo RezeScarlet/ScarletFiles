@@ -19,8 +19,10 @@ I plan on making a install script for these with options for a light desktop.
 - Yazi
 
 ### Steps
+install Shyfox
+Set Rose Pine on Dark reader on Firefox on dynamic mode
 1. Install all the dependencies
-2. Set Oh My Fish theme to Clearence with ```omf theme Clearence```
+2. Set Oh My Fish theme to Clearance with ```omf theme Clearence```
 2. Clone the repo in ```~/```
 3. Cd into it
 4. run stow ```--dotfiles .```
@@ -29,3 +31,4 @@ I plan on making a install script for these with options for a light desktop.
 - HyDE
 - vídeo do mano que sobre stow
 - Shyfox
+
