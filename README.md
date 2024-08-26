@@ -29,6 +29,6 @@ Set Rose Pine on Dark reader on Firefox on dynamic mode
 
 ## Some Recommendations
 - HyDE
-- vídeo do mano que sobre stow
+- Video explaining Stow https://youtu.be/y6XCebnB9gs?si=pyAgFZpmDKfTdK15
 - Shyfox
 
