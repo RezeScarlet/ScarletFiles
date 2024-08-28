@@ -1,5 +1,7 @@
 # Scarlet Files
 All of my configs in one place
+This Repository is made for personal needs, so it's only tested on Arch Linux.
+Also note that the customization of all apps is in early state and may have several changes in the future.
 
 ## Apps Included
 - Neovim
@@ -21,6 +23,7 @@ I plan on making a install script for these.
 - Yazi
 - Zoxide
 - 7 Zip
+- I3
 
 ### Steps
 1. Install all the dependencies
