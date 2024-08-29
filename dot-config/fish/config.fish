@@ -10,8 +10,10 @@ if status --is-interactive
     rm -f -- "$tmp"
   end
 
+set -gx EDITOR nvim
 
 alias ":q"="exit"
+alias "v"="nvim"
 end
 
 zoxide init fish | source
