@@ -5,18 +5,26 @@ set $mod Mod1
 font pango:Cascadia Cove 8
 
 # Execs
-#CHANGE LATER
-# exec_always --no-startup-id feh --randomize --bg-fill ~/Pictures/Wallpapers/
-exec --no-startup-id systemd-run --on-calendar="*-*-* *:*/0:10" --user -- \
-    /usr/bin/feh --no-fehbg --bg-scale --randomize -r ~/Pictures/Wallpapers/
+# Wallpaper slide show
+exec --no-startup-id systemd-run --on-calendar="*-*-* *:0/1:00" --user \
+    /usr/bin/feh --no-fehbg --bg-fill --randomize -r ~/Pictures/Wallpapers/
+
+exec_always --no-startup-id autotiling
+exec_always --no-startup-id picom
+exec_always --no-startup-id ~/.config/polybar/polybar.sh &
+
 # Border Config
 default_border pixel 2
-hide_edge_borders smart
+# hide_edge_borders smart
 
 # Gaps
-gaps inner 2
-gaps outer 2
-smart_gaps on
+gaps inner 4
+gaps outer 4
+# gaps bottom 2
+# gaps right 2
+# gaps left 2 
+gaps top 0 
+# smart_gaps on
 
 # Rose Pine Theme
 # set primary Rosé Pine colorscheme colors
@@ -76,6 +84,7 @@ bindsym $mod+a exec rofi -show drun
 bindsym $mod+f exec firefox
 bindsym $mod+e exec kitty fish -C yy
 bindsym $mod+n exec kitty nvim
+bindsym $mod+p exec flameshot gui
 
 # kill focused window
 bindsym $mod+q kill
@@ -165,10 +174,10 @@ bindsym $mod+BackSpace exec "i3-nagbar -t warning -m 'You pressed the exit short
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym ccedilla resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
@@ -181,9 +190,3 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-        status_command i3status
-}
