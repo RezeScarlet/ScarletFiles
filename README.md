@@ -10,6 +10,9 @@ Also note that the customization of all apps is in early state and may have seve
 - Fish
 - Polybar
 - Flameshot
+- Picom
+- Dunst
+- Rofi
 
 ## Installation
 
@@ -26,10 +29,18 @@ I plan on making a install script for these.
 - Zoxide
 - 7-Zip
 - I3
+
 - Autotiling
 - Polybar
-- Picon
+- Picom
 - Flameshot
+- Cascadia Cove font
+- Symbols Nerd Font Mono
+- Zscroll
+- Dunst
+- Rofi Power Menu
+- i3Lock
+- xss Lock
 
 ### Steps
 1. Install all the dependencies
@@ -46,4 +57,6 @@ Use Rose Pine Theme for Vesktop
 - HyDE
 - Video explaining Stow https://youtu.be/y6XCebnB9gs?si=pyAgFZpmDKfTdK15
 - Shyfox
-
+https://github.com/PrayagS/polybar-spotify
+- picom animations: https://gitlab.com/codevedas/dotfiles-ayushman
+- https://github.com/dharmx/walls
