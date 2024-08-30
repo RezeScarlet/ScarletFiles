@@ -6,24 +6,21 @@ font pango:Cascadia Cove 8
 
 # Execs
 # Wallpaper slide show
+exec --no-startup-id feh --no-fehbg --bg-fill --randomize -r ~/Pictures/Wallpapers/
 exec --no-startup-id systemd-run --on-calendar="*-*-* *:0/1:00" --user \
     /usr/bin/feh --no-fehbg --bg-fill --randomize -r ~/Pictures/Wallpapers/
 
 exec_always --no-startup-id autotiling
 exec_always --no-startup-id picom
-exec_always --no-startup-id ~/.config/polybar/polybar.sh &
+exec_always --no-startup-id dunst
+exec_always --no-startup-id ~/.config/polybar/scripts/polybar.sh &
 
 # Border Config
 default_border pixel 2
 # hide_edge_borders smart
 
 # Gaps
-gaps inner 4
-gaps outer 4
-# gaps bottom 2
-# gaps right 2
-# gaps left 2 
-gaps top 0 
+gaps inner 8
 # smart_gaps on
 
 # Rose Pine Theme
@@ -46,23 +43,19 @@ set $highlighthigh  #524f67
 
 # Teming border and Windows --------------
 # target                 title     bg    text   indicator  border
-client.focused           $love     $base $text  $rose      $love
-client.focused_inactive  $text     $base $text  $subtle    $surface
+client.focused           $love     $base $text  $love      $love
+client.focused_inactive  $text     $base $text  $surface    $surface
 client.unfocused         $text     $base $text  $overlay   $overlay
 client.urgent            $text     $base $text  $love      $love
 client.placeholder       $base     $base $text  $overlay   $overlay
 client.background        $base
 
-# Start XDG autostart .desktop files using dex. See also
-# https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
-# The combination of xss-lock, nm-applet and pactl is a popular choice, so
-# they are included here as an example. Modify as you see fit.
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -c 191724 -u --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -84,7 +77,7 @@ bindsym $mod+a exec rofi -show drun
 bindsym $mod+f exec firefox
 bindsym $mod+e exec kitty fish -C yy
 bindsym $mod+n exec kitty nvim
-bindsym $mod+p exec flameshot gui
+bindsym Print exec flameshot gui
 
 # kill focused window
 bindsym $mod+q kill
@@ -170,7 +163,10 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # exit i3 (logs you out of your X session)
-bindsym $mod+BackSpace exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+# bindsym $mod+BackSpace exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# Power Menu
+bindsym $mod1+BackSpace exec "rofi -show power-menu -modi "power-menu:rofi-power-menu --choices=shutdown/reboot/logout/" -theme-str 'window {width: 10em;} listview {columns: 1; lines: 3;} inputbar {enabled: false;}'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
