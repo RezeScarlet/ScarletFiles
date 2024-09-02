@@ -29,7 +29,6 @@ I plan on making a install script for these.
 - Zoxide
 - 7-Zip
 - I3
-
 - Autotiling
 - Polybar
 - Picom
@@ -41,6 +40,10 @@ I plan on making a install script for these.
 - Rofi Power Menu
 - i3Lock
 - xss Lock
+
+#### Nvim Dependencies
+- texlive (group)
+- Zathura
 
 ### Steps
 1. Install all the dependencies
@@ -60,3 +63,4 @@ I plan on making a install script for these.
 - Polybar Spotify Module: https://github.com/PrayagS/polybar-spotify
 - picom animations: https://gitlab.com/codevedas/dotfiles-ayushman
 - Most of the wallpaper came from this repo and some were edit by me to look better with Rosé Pine: https://github.com/dharmx/walls
+- My Nvim config is based on https://github.com/LunarVim/Neovim-from-scratch I recommend following the playlist to learn how Nvim works 
