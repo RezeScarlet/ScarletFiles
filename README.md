@@ -27,7 +27,7 @@ I plan on making a install script for these.
 - Firefox
 - Yazi
 - Zoxide
-- 7-Zip
+- 7Zip
 - I3
 - Autotiling
 - Polybar
@@ -40,6 +40,7 @@ I plan on making a install script for these.
 - Rofi Power Menu
 - i3Lock
 - xss Lock
+- Yay
 
 #### Nvim Dependencies
 - texlive (group)
@@ -52,9 +53,17 @@ I plan on making a install script for these.
 4. Use Minimal theme for Obsidian and the option Rose Pine on Minimal Theme settings
 5. Use Rose Pine Theme for Vesktop
 6. Set Oh My Fish theme to clearance with ```omf install clearence && omf theme clearence```
-7. Clone the repo in ```~/```
-8. ```cd``` into it
+7. Clone repo ```git clone https://github.com/RezeScarlet/ScarletFiles.git ~/```
+8. Enter the directory```cd ScarletFiles```
 9. run ```stow --dotfiles .```
+10. Stow may warn about conflicts, rename them as backups and run it again.
+
+### Installer
+I started working on a install scrip to make things easier when formatting a machine. I didn't tested it yet.
+1. ```git clone https://github.com/RezeScarlet/ScarletFiles.git ~/```
+2. ```cd ScarletFiles```
+3. ```./install.sh```
+4. Stow may warn about conflicts, rename them as backups and run it again.
 
 ## Some Recommendations
 - HyDE
