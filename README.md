@@ -17,14 +17,13 @@ Also note that the customization of all apps is in early state and may have seve
 ## Installation
 
 ### List do Dependencies
-I plan on making a install script for these.
 - Stow
 - Git
 - Nvim
 - Github
 - Fish
 - Oh My Fish
-- Firefox
+- Zen Browser
 - Yazi
 - Zoxide
 - 7Zip
@@ -48,28 +47,27 @@ I plan on making a install script for these.
 
 ### Steps
 1. Install all the dependencies
-2. install Shyfox
-3. Set Rose Pine on Dark reader on Firefox on dynamic mode
-4. Use Minimal theme for Obsidian and the option Rose Pine on Minimal Theme settings
-5. Use Rose Pine Theme for Vesktop
-6. Set Oh My Fish theme to clearance with ```omf install clearence && omf theme clearence```
-7. Clone repo ```git clone https://github.com/RezeScarlet/ScarletFiles.git ~/```
-8. Enter the directory```cd ScarletFiles```
-9. run ```stow --dotfiles .```
-10. Stow may warn about conflicts, rename them as backups and run it again.
+2. Set Rose Pine on Dark reader on Zen on dynamic mode
+3. Use Minimal theme for Obsidian and the option Rose Pine on Minimal Theme settings
+4. Use Rose Pine Theme for Vesktop
+5. Set Oh My Fish theme to clearance with ```omf install clearence && omf theme clearence```
+6. Clone repo ```git clone https://github.com/RezeScarlet/ScarletFiles.git ~/```
+7. Enter the directory```cd ScarletFiles```
+8. run ```stow --dotfiles .```
+9. Stow may warn about conflicts, rename them as backups and run it again.
 
 ### Installer
-I started working on a install scrip to make things easier when formatting a machine. I didn't tested it yet.
+I started working on a install script to make things easier when formatting a machine. I didn't tested it yet.
 1. ```git clone https://github.com/RezeScarlet/ScarletFiles.git ~/```
 2. ```cd ScarletFiles```
 3. ```./install.sh```
 4. Stow may warn about conflicts, rename them as backups and run it again.
 
 ## Some Recommendations
-- HyDE
-- Video explaining Stow https://youtu.be/y6XCebnB9gs?si=pyAgFZpmDKfTdK15
-- Shyfox
-- Polybar Spotify Module: https://github.com/PrayagS/polybar-spotify
-- picom animations: https://gitlab.com/codevedas/dotfiles-ayushman
-- Most of the wallpaper came from this repo and some were edit by me to look better with Rosé Pine: https://github.com/dharmx/walls
-- My Nvim config is based on https://github.com/LunarVim/Neovim-from-scratch I recommend following the playlist to learn how Nvim works 
+- How to use Stow https://youtu.be/y6XCebnB9gs?si=pyAgFZpmDKfTdK15
+- Nice Hyprland dotfiles: <a href="https://github.com/prasanthrangan/hyprdots">HyDE</a>
+- Firefox Customization: <a href="https://github.com/Naezr/ShyFox">Shyfox</a>
+- <a href="https://github.com/PrayagS/polybar-spotify">Polybar Spotify Module</a> 
+- <a href"https://gitlab.com/codevedas/dotfiles-ayushman">Picom animations</a>
+- Most <a href="https://github.com/dharmx/walls">Wallpapers</a> (I edited some of them)
+- Nvim based of <a href="https://github.com/LunarVim/Neovim-from-scratch>Neovim from scratch</a> recommend following the playlist to learn how Nvim works 
