@@ -74,9 +74,9 @@ floating_modifier $mod
 # Shortcuts
 bindsym $mod+t exec kitty
 bindsym $mod+a exec rofi -show drun
-bindsym $mod+f exec firefox
+bindsym $mod+f exec zen-browser
 bindsym $mod+e exec kitty fish -C yy
-bindsym $mod+n exec kitty nvim
+bindsym $mod+c exec kitty nvim
 bindsym Print exec flameshot gui
 
 # kill focused window
@@ -111,6 +111,7 @@ bindsym $mod+Return fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+w layout tabbed
+bindsym $mod+s layout toggle split
 # change it to autotiling
 # bindsym $mod+t layout toggle split
 
