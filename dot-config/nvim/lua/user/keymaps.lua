@@ -20,12 +20,13 @@ keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Move line
-keymap("n", "<A-j>", ":m .+1<CR>==", opts)
-keymap("n", "<A-k>", ":m .-2<CR>==", opts)
+keymap("n", "<D-j>", ":m .+1<CR>==", opts)
+keymap("n", "<D-k>", ":m .-2<CR>==", opts)
 
 -- Move block
-keymap("v", "<A-j>", ":m '>+1<CR>gv-gv")
-keymap("v", "<A-k>", ":m '<-2<CR>gv-gv")
+-- D for Meta key
+keymap("v", "<D-j>", ":m '>+1<CR>gv-gv")
+keymap("v", "<D-k>", ":m '<-2<CR>gv-gv")
 
 keymap("n", "n", "nzz", opts)
 keymap("n", "N", "Nzz", opts)
