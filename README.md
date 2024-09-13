@@ -68,6 +68,6 @@ I started working on a install script to make things easier when formatting a ma
 - Nice Hyprland dotfiles: <a href="https://github.com/prasanthrangan/hyprdots">HyDE</a>
 - Firefox Customization: <a href="https://github.com/Naezr/ShyFox">Shyfox</a>
 - <a href="https://github.com/PrayagS/polybar-spotify">Polybar Spotify Module</a> 
-- <a href"https://gitlab.com/codevedas/dotfiles-ayushman">Picom animations</a>
+- <a href="https://gitlab.com/codevedas/dotfiles-ayushman">Picom animations</a>
 - Most <a href="https://github.com/dharmx/walls">Wallpapers</a> (I edited some of them)
 - Nvim based of <a href="https://github.com/LunarVim/Neovim-from-scratch">Neovim from scratch</a> recommend following the playlist to learn how Nvim works 
