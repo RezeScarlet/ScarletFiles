@@ -174,7 +174,7 @@ bindsym $mod+Shift+r restart
 # bindsym $mod+BackSpace exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # Power Menu
-bindsym $mod1+BackSpace exec "rofi -show power-menu -modi "power-menu:rofi-power-menu --choices=shutdown/reboot/logout/" -theme-str 'window {width: 10em;} listview {columns: 1; lines: 3;} inputbar {enabled: false;}'"
+bindsym $mod+BackSpace exec "rofi -show power-menu -modi 'power-menu:rofi-power-menu --choices=shutdown/reboot/logout/' -theme-str 'window {width: 10em;} listview {columns: 1; lines: 3;} inputbar {enabled: false;}'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
