@@ -16,7 +16,8 @@ Also note that the customization of all apps is in early state and may have seve
 
 ## Installation
 
-### List do Dependencies
+### <details><summary>List do Dependencies</summary>
+
 - Stow
 - Git
 - Nvim
