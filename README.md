@@ -41,6 +41,7 @@ Also note that the customization of all apps is in early state and may have seve
 - i3Lock
 - xss Lock
 - Yay
+<details/>
 
 #### Nvim Dependencies
 - texlive (group)
