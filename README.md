@@ -1,9 +1,13 @@
 # Scarlet Files
 All of my configs in one place
+
+![2024-08-30_14-55](https://github.com/user-attachments/assets/81ea3786-834c-4cf0-a4b5-144ac5ec98f5)
+![2024-08-30_14-54](https://github.com/user-attachments/assets/1135b01a-037a-4072-9dbf-9bf77358b034)
+
 This Repository is made for personal needs, so it's only tested on Arch Linux.
 Also note that the customization of all apps is in early state and may have several changes in the future.
 
-## Apps Included
+## Apps Customized
 - Neovim
 - I3wm
 - Kitty
@@ -41,32 +45,27 @@ Also note that the customization of all apps is in early state and may have seve
 - i3Lock
 - xss Lock
 - Yay
-</details>
+
 
 #### Nvim Dependencies
 - texlive (group)
 - Zathura
 
-### Steps
-1. Install all the dependencies
+</details>
+
+### Installation
+I started working on a install script to make things easier when formatting a machine. I didn't tested it yet. If it gives you problems open an issue.
+1. Zen Browser doesn't have a Rosé Pine theme yet, so use grub theme and stow to overwrite it's colors 
 2. Set Rose Pine on Dark reader on Zen on dynamic mode
 3. Use Minimal theme for Obsidian and the option Rose Pine on Minimal Theme settings
 4. Use Rose Pine Theme for Vesktop
-5. Set Oh My Fish theme to clearance with ```omf install clearence && omf theme clearence```
-6. Clone repo ```git clone https://github.com/RezeScarlet/ScarletFiles.git ~/```
-7. Enter the directory```cd ScarletFiles```
-8. run ```stow --dotfiles .```
-9. Stow may warn about conflicts, rename them as backups and run it again.
-
-### Installer
-I started working on a install script to make things easier when formatting a machine. I didn't tested it yet.
-1. ```git clone https://github.com/RezeScarlet/ScarletFiles.git ~/```
-2. ```cd ScarletFiles```
-3. ```./install.sh```
-4. Stow may warn about conflicts, rename them as backups and run it again.
+5. ```git clone https://github.com/RezeScarlet/ScarletFiles.git ~/```
+6. ```cd ScarletFiles```
+7. ```./install.sh```
+8. Stow may warn about conflicts, rename them as backups and run it again.
 
 ## Some Recommendations
-- How to use Stow https://youtu.be/y6XCebnB9gs?si=pyAgFZpmDKfTdK15
+- How to use Stow: https://youtu.be/y6XCebnB9gs?si=pyAgFZpmDKfTdK15
 - Nice Hyprland dotfiles: <a href="https://github.com/prasanthrangan/hyprdots">HyDE</a>
 - Firefox Customization: <a href="https://github.com/Naezr/ShyFox">Shyfox</a>
 - <a href="https://github.com/PrayagS/polybar-spotify">Polybar Spotify Module</a> 
