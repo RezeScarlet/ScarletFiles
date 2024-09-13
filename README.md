@@ -20,7 +20,7 @@ Also note that the customization of all apps is in early state and may have seve
 
 ## Installation
 
-### <details><summary>List do Dependencies</summary>
+<details><summary>List do Dependencies</summary>
 
 - Stow
 - Git
