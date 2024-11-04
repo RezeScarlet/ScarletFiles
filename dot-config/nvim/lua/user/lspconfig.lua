@@ -65,6 +65,7 @@ function M.config()
     "lua_ls",
     "clangd",
     "jdtls",
+    "sqls",
   }
 
   local default_diagnostic_config = {

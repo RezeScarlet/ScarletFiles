@@ -2,6 +2,17 @@
 [manager]
 
 [[manager.prepend_keymap]]
+on   = [ "g", "p" ]
+run  = "cd ~/Pictures"
+desc = "Cd to ~/Pictures"
+
+[[manager.prepend_keymap]]
+on   = [ "g", "D" ]
+run  = "cd ~/Desktop"
+desc = "Cd to ~/Desktop"
+
+
+[[manager.prepend_keymap]]
 on   = [ "c", "a" ]
 run  = "plugin compress"
 desc = "Archive selected files"
