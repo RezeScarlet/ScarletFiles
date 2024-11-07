@@ -1,5 +1,10 @@
 {
     "diagnostics.disable": [
         "param-type-mismatch"
+    ],
+    "diagnostics.globals": [
+        "vim",
+        "spec",
+        "jdtls"
     ]
 }
