@@ -6,10 +6,10 @@ local M = {
 function M.config()
   local wk = require "which-key"
   wk.add {
-    { "<leader>fb", "<cmd>Telescope buffers previewer=false<cr>", desc = "Find Buffer" },
-    { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
+    { "<leader>fb", "<cmd>Telescope buffers previewer=false<cr>", desc = "Buffer" },
+    { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Files" },
     { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent File" },
-    { "<leader>ft", "<cmd>Telescope live_grep<cr>", desc = "Find Text" },
+    { "<leader>ft", "<cmd>Telescope live_grep<cr>", desc = "Text" },
   }
 
   local icons = require "user.icons"

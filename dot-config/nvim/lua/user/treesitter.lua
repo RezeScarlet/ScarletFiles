@@ -10,6 +10,10 @@ function M.config()
     auto_install = true,
     highlight = { enable = true },
     indent = { enable = true },
+
+    sync_install = true,
+    ignore_install = {},
+    modules = {},
   }
 end
 

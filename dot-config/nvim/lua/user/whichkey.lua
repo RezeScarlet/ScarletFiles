@@ -2,6 +2,7 @@ local M = {
   "folke/which-key.nvim",
   dependencies = {
     "echasnovski/mini.nvim",
+    "nvim-tree/nvim-web-devicons",
   },
 }
 
@@ -11,14 +12,13 @@ function M.config()
     { "<leader>G", "<cmd>LazyGit<CR>", desc = "Lazygit" },
     { "<leader>L", "<cmd>Lazy<CR>", desc = "Plugins" },
     { "<leader>S", "<cmd>Spectre<CR>", desc = "Search and Replace" },
-    { "<leader>T", "<cmd>TransparentToggle<CR>", desc = "Transparency" },
     { "<leader>f", group = "Find" },
+    { "<leader>h", group = "Harpoon" },
     { "<leader>l", group = "LSP" },
+    { "<leader>w", "<cmd>confirm w<CR>", desc = "Save" },
     { "<leader>q", "<cmd>confirm q<CR>", desc = "Quit" },
     { "<leader>s", "<cmd>ASToggle<CR>", desc = "Toggle Auto Save" },
     { "<leader>t", "<cmd>ToggleTerm direction=horizontal<CR>", desc = "Terminal" },
-    { "<leader>v", "<cmd>vsplit<CR>", desc = "Split" },
-    { "<leader>w", "<cmd>confirm w<CR>", desc = "Save" },
   }
   local which_key = require "which-key"
   local opts = {
@@ -56,12 +56,11 @@ function M.config()
     show_help = true,
     show_keys = false,
     disable = {
-      ft= { "TelescopePrompt" },
-      bt= {},
+      ft = { "TelescopePrompt" },
+      bt = {},
     },
     mode = "n", -- NORMAL mode
     prefix = "<leader>",
-
   }
 
   which_key.add(mappings, opts)

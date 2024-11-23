@@ -5,6 +5,7 @@
     "diagnostics.globals": [
         "vim",
         "spec",
-        "jdtls"
+        "jdtls",
+        "fzf"
     ]
 }
