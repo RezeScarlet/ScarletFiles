@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=oomox-rose-pine
+Comment=Rosé Pine for GTK - all natural pine, faux fur and a bit of soho vibes for the classy minimalist
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+Name=oomox-rose-pine
+GtkTheme=oomox-rose-pine
+IconTheme=oomox-rose-pine
+MetacityTheme=oomox-rose-pine

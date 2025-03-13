@@ -1,5 +1,12 @@
-[plugin]
-deps = [{ use = "dedukun/relative-motions", rev = "6aecfcd" }, { use = "KKV9/compress", rev = "60b24af" }]
+[[plugin.deps]]
+use = "dedukun/relative-motions"
+rev = "6aecfcd"
+hash = "639b52657e76e0f2a052fdff2f19ef94"
+
+[[plugin.deps]]
+use = "KKV9/compress"
+rev = "60b24af"
+hash = "ee025be766240cc98e671754ac836da3"
 
 [flavor]
 deps = []

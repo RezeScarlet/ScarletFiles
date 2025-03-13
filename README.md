@@ -72,3 +72,4 @@ I started working on a install script to make things easier when formatting a ma
 - Most <a href="https://github.com/dharmx/walls">Wallpapers</a> (I edited some of them)
 - Nvim based of <a href="https://github.com/LunarVim/Neovim-from-scratch">Neovim from scratch</a> recommend following the playlist to learn how Nvim works 
 - App to change wallpaper color scheme <a href="https://github.com/Achno/gowall">Gowall</a>
+- Based my eww config on these repos: https://github.com/pxeemo/workflow https://github.com/KatieUmbra/Dotfiles

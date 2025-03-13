@@ -1,0 +1,8 @@
+[default]
+duration = "3m"
+mode = "center"
+sorting = "random"
+path = "~/Pictures/Wallpapers"
+
+[default.transition.colour-distance]
+power = 3
