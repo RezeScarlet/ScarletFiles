@@ -8,7 +8,6 @@
 spawn-at-startup "mako"
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "wpaperd"
-spawn-at-startup "eww" "open" "--screen" "1" "leftbar"
 
 environment {
     DISPLAY ":0"
@@ -39,7 +38,7 @@ input {
         natural-scroll
         // accel-speed 0.2
         // accel-profile "flat"
-        // scroll-method "two-finger"
+        scroll-method "edge"
         // disabled-on-external-mouse
     }
 
