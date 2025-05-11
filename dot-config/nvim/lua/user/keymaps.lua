@@ -50,5 +50,4 @@ vim.keymap.set("n", "<RightMouse>", "<cmd>:popup mousemenu<CR>")
 -- more good
 keymap({ "n", "o", "x" }, "<s-h>", "^", opts)
 keymap({ "n", "o", "x" }, "<s-l>", "g_", opts)
-
 vim.api.nvim_set_keymap("t", "<C-;>", "<C-\\><C-n>", opts)

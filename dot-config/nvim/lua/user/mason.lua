@@ -5,7 +5,6 @@ local M = {
   },
 }
 
-
 function M.config()
   local servers = {
     "lua_ls",
@@ -14,15 +13,20 @@ function M.config()
 
   require("mason").setup {
     ui = {
-      border = "rounded",
+      icons = {
+        package_installed = "✓",
+        package_pending = "➜",
+        package_uninstalled = "✗",
+      },
+      border = "rounded"
     },
   }
 
   require("mason-lspconfig").setup {
     ensure_installed = servers,
     opts = {
-      auto_install = true
-    }
+      auto_install = true,
+    },
   }
 end
 

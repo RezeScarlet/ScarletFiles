@@ -1,9 +1,10 @@
- /*
+/*
 * Variant: Rosé Pine
 * Maintainer: DankChoir
 */
 
-@define-color base            #191724;
+/* @define-color base            #191724; */
+@define-color base            rgba(25,23,36, 0.95);
 @define-color surface         #1f1d2e;
 @define-color overlay         #26233a;
 

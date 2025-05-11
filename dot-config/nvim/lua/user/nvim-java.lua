@@ -15,24 +15,47 @@ jdtls = function()
       "build.gradle",
       "build.gradle.kts",
       ".git",
+      "README.md",
     },
     sources = {
       organizeImports = {
         starThreshold = 9999,
         staticStarThreshold = 9999,
       },
-    }
+    },
+    jdk = {
+      auto_install = true,
+      version = "23.0.2",
+    },
   }
 
   require("lspconfig").jdtls.setup {
-    cmd = { "jdtls", "-data", "/home/rezescarlet/Desktop/Non-Linear-Structures/" },
     settings = {
       java = {
-        project = {
-          referencedLibraries = {
-            "lib/JSGE-v1.1.0/jsge.jar", -- substitua pelo caminho correto do arquivo .jar
+        configuration = {
+          runtimes = {
+            {
+              name = "java-23-openjdk",
+              path = "/usr/lib/jvm/java-23-openjdk/",
+              default = true,
+            },
           },
         },
+        project = {
+          sourcePaths = { "src" },
+          outputPath = "bin",
+          referencedLibraries = {
+            "lib/**/*.jar",
+          },
+          referencedSources = {
+            ["lib/JSGE-v1.6.1-bin.jar"] = "lib/JSGE-v1.6.1-src.jar",
+          },
+        },
+      },
+    },
+    init_options = {
+      vmargs = {
+        "-Djava.library.path=lib/jinput-2.0.10-natives-all",
       },
     },
   }

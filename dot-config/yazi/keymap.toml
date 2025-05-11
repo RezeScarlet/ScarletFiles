@@ -7,20 +7,15 @@ run  = "cd ~/Pictures"
 desc = "Cd to ~/Pictures"
 
 [[manager.prepend_keymap]]
+on   = [ "g", "t" ]
+run  = "cd ~/.local/share/Trash/files/"
+desc = "Cd to trash"
+
+[[manager.prepend_keymap]]
 on   = [ "g", "D" ]
 run  = "cd ~/Desktop"
 desc = "Cd to ~/Desktop"
 
-
-[[manager.prepend_keymap]]
-on   = [ "c", "a" ]
-run  = "plugin compress"
-desc = "Archive selected files"
-
-[[manager.prepend_keymap]]
-on = "u"
-run = "plugin restore"
-desc = "Restore last deleted files/folders"
 
 [[manager.prepend_keymap]]
 on = [ "m" ]
@@ -29,45 +24,45 @@ desc = "Trigger a new relative motion"
 
 [[manager.prepend_keymap]]
 on = [ "1" ]
-run = "plugin relative-motions --args=1"
+run = "plugin relative-motions 1"
 desc = "Move in relative steps"
 
 [[manager.prepend_keymap]]
 on = [ "2" ]
-run = "plugin relative-motions --args=2"
+run = "plugin relative-motions 2"
 desc = "Move in relative steps"
 
 [[manager.prepend_keymap]]
 on = [ "3" ]
-run = "plugin relative-motions --args=3"
+run = "plugin relative-motions 3"
 desc = "Move in relative steps"
 
 [[manager.prepend_keymap]]
 on = [ "4" ]
-run = "plugin relative-motions --args=4"
+run = "plugin relative-motions 4"
 desc = "Move in relative steps"
 
 [[manager.prepend_keymap]]
 on = [ "5" ]
-run = "plugin relative-motions --args=5"
+run = "plugin relative-motions 5"
 desc = "Move in relative steps"
 
 [[manager.prepend_keymap]]
 on = [ "6" ]
-run = "plugin relative-motions --args=6"
+run = "plugin relative-motions 6"
 desc = "Move in relative steps"
 
 [[manager.prepend_keymap]]
 on = [ "7" ]
-run = "plugin relative-motions --args=7"
+run = "plugin relative-motions 7"
 desc = "Move in relative steps"
 
 [[manager.prepend_keymap]]
 on = [ "8" ]
-run = "plugin relative-motions --args=8"
+run = "plugin relative-motions 8"
 desc = "Move in relative steps"
 
 [[manager.prepend_keymap]]
 on = [ "9" ]
-run = "plugin relative-motions --args=9"
+run = "plugin relative-motions 9"
 desc = "Move in relative steps"

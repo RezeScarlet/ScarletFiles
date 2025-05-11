@@ -31,10 +31,13 @@ spec "user.lazygit"
 spec "user.spectre"
 spec "user.todocomments"
 spec "user.autosave"
-spec "user.keys" -- Display Keys
-spec "user.vimtex"
+-- spec "user.keys" -- Display Keys
+-- spec "user.vimtex"
 spec "user.vim-wakatime"
-spec "user.vim-dadbod-ui" -- Data Base stuff
-spec "user.nvim-java"
+-- spec "user.vim-dadbod-ui" -- Data Base stuff
+-- spec "user.nvim-java"
+spec "user.nvim-jdtls"
 spec "user.satellite"
+spec "user.nvim-conda"
+spec "user.nvim-spider"
 require "user.lazy"

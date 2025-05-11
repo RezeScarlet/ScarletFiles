@@ -1,77 +1,104 @@
- * {
-  border: none;
-  font-family: "Hack", "Font Awesome 6 Pro";
+@import "./rose-pine.css";
+* {
+  font-family: "Cascadian Cove";
   font-size: 14px;
   font-weight: 600;
   background: none;
 }
 
 window#waybar {
-  color: #a5adcb;
-}
-.modules-left,
-.modules-right,
-.modules-center {
+  color: @text;
+  border: solid;
+  border-color: @love;
+  border-width: 2px;
   border-radius: 6px;
-  background: #181926;
-  padding: 12px 0;
+  background: @base;
+  /* padding: 12px; */
 }
+/* .modules-left, */
+/* .modules-right, */
+/* .modules-center { */
+/*   border: solid; */
+/*   border-color: @love; */
+/*   border-width: 2px; */
+/*   border-radius: 6px; */
+/*   background: @base; */
+/*   padding: 12px 0; */
+/* } */
 tooltip {
-  color: #a5adcb;
-  background-color: #181926;
+  color: @text;
+  background-color: @base;
   text-shadow: none;
 }
 
 tooltip * {
-  color: #a5adcb;
+  color: @text;
   text-shadow: none;
 }
-.modules-center {
-}
+
+/* .modules-center { */
+/* } */
 
 #custom-sep {
-  color: #494d64;
-  margin: 4px 0;
+  color: @rose;
 }
-#workspaces,
-#clock,
-#custom-bluetooth_devices,
-#custom-powermenu,
-#pulseaudio,
-#tray {
-}
+
+/* #workspaces, */
+/* #clock, */
+/* #custom-bluetooth_devices, */
+/* #custom-powermenu, */
+/* #pulseaudio, */
+/* #tray { */
+/* } */
+/* #workspaces { */
+/* } */
+/* #workspaces button { */
+/*   padding: 0; */
+/*   min-width: 0; */
+/*   font-size: 10px; */
+/*   background: none; */
+/*   color: @text; */
+/* } */
 #workspaces {
-  border-radius: 4px;
+
 }
+
 #workspaces button {
-  color: #5b6078;
-  background: none;
+  min-width: 30px;
+  min-height: 30px;
   padding: 0;
+  margin: 2px 0;
+  font-size: 12px;
+  padding-right: 4px;
 }
 #workspaces button:hover {
-  color: #a6da95;
+  color: @rose;
 }
 #workspaces button.active {
-  color: #f5bde6;
+  color: @love;
 }
 #temperature {
-  color: #eed49f;
+  color: @gold;
+  font-size: 28px;
 }
 #clock {
-  font-weight: 600;
-  color: #8bd5ca;
+  font-weight: 800;
+  font-size: 17;
+  color: @iris;
 }
-#custom-bluetooth_devices {
-  color: #8aadf4;
-}
+/* #custom-bluetooth_devices { */
+/*   color: @pine; */
+/* } */
 #pulseaudio {
-  color: #a6da95;
+  color: @foam;
+  font-size: 19px;
+  padding-right: 7px;
 }
 #pulseaudio.muted {
-  color: #ed8796;
+  color: @love;
 }
 
 #custom-powermenu {
-  margin: 12px 0 0 0;
-  color: #6e738d;
+  margin: 0 0 0 0;
+  color: @overlay;
 }

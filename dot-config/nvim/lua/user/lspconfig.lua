@@ -64,8 +64,10 @@ function M.config()
   local servers = {
     "lua_ls",
     "clangd",
-    "jdtls",
+    -- "jdtls",
+    "pylsp",
     "sqls",
+    "emmet_language_server",
   }
 
   local default_diagnostic_config = {
