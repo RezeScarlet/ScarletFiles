@@ -3,41 +3,15 @@
   "position": "left",
   "width": 10,
   "margin": "6 0 6 6",
-  "spacing": 2,
-  "modules-left": [
-    // "custom/sep",
-"niri/workspaces"
-  ],
-  "modules-center": [
-    "custom/sep",
-  ],
-  "modules-right": [
-    // "custom/bluetooth_devices",
-    "temperature",
-    // "custom/sep",
-    "pulseaudio",
-    // "custom/powermenu",
-    "tray",
-    "clock",
-  ],
+  "spacing": 4,
+  "modules-left": ["niri/workspaces"],
+  "modules-center": ["custom/sep"],
+  "modules-right": ["battery", "temperature", "pulseaudio", "clock"],
   "custom/sep": {
-    "format": "୨♡୧",
-
+    "rotate": 90,
+    "format": "· · · ♥ · · ·",
+    // "format": "✩░▒▓▆▅▃▂▁୨♡୧▁▂▃▅▆▓▒░✩",
   },
-  "custom/powermenu": {
-    // "on-click": "~/.config/wofi/scripts/wofipowermenu.py",
-    "format": "",
-    "tooltip": false,
-  },
-  // "custom/bluetooth_devices": {
-  //   "exec": "$HOME/.config/waybar/custom_modules/bluetooth_devices.sh",
-  //   "return-type": "json",
-  //   "format": "{}",
-  //   "justify": "center",
-  //   "rotate": 90,
-  //   "interval": 5,
-  //   "on-click": "blueman-manager",
-  // },
   "niri/workspaces": {
     "format": "{icon}",
     "format-icons": {
@@ -52,9 +26,9 @@
     "tooltip-format": "{:%Y-%m-%d}",
   },
   "tray": {
-    "icon-size": 18,
-    "show-passive-items": "true",
-  },
+    "icon-size": 20,
+    "spacing": 4,
+    "show-passive-items": "false",},
   "temperature": {
     "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
     "critical-threshold": 80,
@@ -69,5 +43,19 @@
     "tooltip-format": "{volume}%",
     "on-click-right": "pavucontrol",
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+  },
+  "battery": {
+    "bat": "BAT0",
+    "interval": 60,
+    "states": {
+      "warning": 30,
+      "critical": 15,
+    },
+    "format": "{icon}",
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "format-charging": "󰂄",
+    "format-full": "󱈑",
+    "max-length": 25,
+    "tooltip-format": "{capacity}%: {timeTo}",
   },
 }

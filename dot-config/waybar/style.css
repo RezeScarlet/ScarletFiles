@@ -15,16 +15,16 @@ window#waybar {
   background: @base;
   /* padding: 12px; */
 }
-/* .modules-left, */
-/* .modules-right, */
-/* .modules-center { */
-/*   border: solid; */
-/*   border-color: @love; */
-/*   border-width: 2px; */
-/*   border-radius: 6px; */
-/*   background: @base; */
-/*   padding: 12px 0; */
-/* } */
+.modules-left,
+.modules-right,
+.modules-center {
+  /* border: solid; */
+  /* border-color: @love; */
+  /* border-width: 2px; */
+  /* border-radius: 6px; */
+  /* background: @base; */
+  padding: 7px 0;
+}
 tooltip {
   color: @text;
   background-color: @base;
@@ -40,7 +40,7 @@ tooltip * {
 /* } */
 
 #custom-sep {
-  color: @rose;
+  color: @love;
 }
 
 /* #workspaces, */
@@ -48,8 +48,9 @@ tooltip * {
 /* #custom-bluetooth_devices, */
 /* #custom-powermenu, */
 /* #pulseaudio, */
-/* #tray { */
-/* } */
+#tray {
+  color: @love;
+}
 /* #workspaces { */
 /* } */
 /* #workspaces button { */
@@ -59,46 +60,48 @@ tooltip * {
 /*   background: none; */
 /*   color: @text; */
 /* } */
-#workspaces {
-
-}
 
 #workspaces button {
   min-width: 30px;
-  min-height: 30px;
+  /* min-height: 30px; */
   padding: 0;
-  margin: 2px 0;
+  margin: 0px 0;
   font-size: 12px;
   padding-right: 4px;
 }
 #workspaces button:hover {
-  color: @rose;
+  color: @love;
 }
 #workspaces button.active {
   color: @love;
 }
+#battery {
+  color: @love;
+  font-size: 22px;
+  /* padding-right: 7px; */
+}
 #temperature {
-  color: @gold;
-  font-size: 28px;
+  color: @love;
+  font-size: 22px;
 }
 #clock {
   font-weight: 800;
-  font-size: 17;
-  color: @iris;
+  font-size: 22;
+  color: @love;
 }
 /* #custom-bluetooth_devices { */
 /*   color: @pine; */
 /* } */
 #pulseaudio {
-  color: @foam;
-  font-size: 19px;
+  color: @love;
+  font-size: 22px;
   padding-right: 7px;
 }
 #pulseaudio.muted {
   color: @love;
 }
 
-#custom-powermenu {
-  margin: 0 0 0 0;
-  color: @overlay;
-}
+/* #custom-powermenu { */
+/*   margin: 0 0 0 0; */
+/*   color: @overlay; */
+/* } */
