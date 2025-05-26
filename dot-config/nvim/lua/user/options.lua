@@ -2,7 +2,7 @@ vim.opt.backup = false -- creates a backup file
 vim.opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
 vim.opt.cmdheight = 1 -- more space in the neovim command line for displaying messages
 vim.opt.completeopt = { "menuone", "noselect" } -- mostly just for cmp
-vim.opt.conceallevel = 0 -- so that `` is visible in markdown files
+vim.opt.conceallevel = 1 -- so that `` is visible in markdown files
 vim.opt.fileencoding = "utf-8" -- the encoding written to a file
 vim.opt.hlsearch = true -- highlight all matches on previous search pattern
 vim.opt.ignorecase = true -- ignore case in search patterns
@@ -37,8 +37,6 @@ vim.opt.scrolloff = 0
 vim.opt.sidescrolloff = 8
 vim.opt.guifont = "monospace:h17" -- the font used in graphical neovim applications
 vim.opt.title = false
--- colorcolumn = "80",
--- colorcolumn = "120",
 vim.opt.fillchars = vim.opt.fillchars + "eob: "
 vim.opt.fillchars:append {
   stl = " ",
@@ -52,3 +50,21 @@ vim.cmd [[set iskeyword+=-]]
 vim.g.netrw_banner = 0
 vim.g.netrw_mouse = 2
 
+-- LSP
+vim.lsp.enable { "luals", "clangd", "pylsp", "emmet-language-server" }
+local icons = require "user.icons"
+vim.diagnostic.config {
+  virtual_lines = true,
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = icons.diagnostics.BoldError,
+      [vim.diagnostic.severity.WARN]  = icons.diagnostics.BoldWarning,
+      [vim.diagnostic.severity.HINT]  = icons.diagnostics.BoldHint,
+      [vim.diagnostic.severity.INFO]  = icons.diagnostics.BoldInformation,
+    },
+  },
+  update_in_insert = true,
+  underline = true,
+  severity_sort = true,
+
+}

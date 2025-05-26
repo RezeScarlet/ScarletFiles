@@ -1,0 +1,12 @@
+on-button-right=dismiss-all
+text-color=#e0def4
+background-color=#191724
+border-color=#eb6f92
+border-size=2
+border-radius=4
+max-visible=3
+default-timeout=5000
+history=0
+
+[urgency=high]
+text-color=#eb6f92

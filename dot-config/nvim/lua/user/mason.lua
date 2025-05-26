@@ -1,8 +1,8 @@
 local M = {
-  "williamboman/mason-lspconfig.nvim",
-  dependencies = {
     "williamboman/mason.nvim",
-  },
+  -- "williamboman/mason-lspconfig.nvim",
+  -- dependencies = {
+  -- },
 }
 
 function M.config()
@@ -22,12 +22,12 @@ function M.config()
     },
   }
 
-  require("mason-lspconfig").setup {
-    ensure_installed = servers,
-    opts = {
-      auto_install = true,
-    },
-  }
+  -- require("mason-lspconfig").setup {
+  --   ensure_installed = servers,
+  --   opts = {
+  --     auto_install = true,
+  --   },
+  -- }
 end
 
 return M

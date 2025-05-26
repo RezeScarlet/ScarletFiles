@@ -9,11 +9,8 @@ function M.config()
     ensure_installed = { "lua", "cpp" },
     auto_install = true,
     highlight = { enable = true },
-    indent = { enable = true },
-
+    indent = { enable = true, disable = { "kdl" } },
     sync_install = true,
-    ignore_install = {},
-    modules = {},
   }
 end
 
