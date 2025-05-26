@@ -37,7 +37,7 @@ echo
   ans=$(echo "$ans" | tr '[:upper:]' '[:lower:]')
 if [ "$ans" != "n" ];
 then
-  yay -Syuq --noconfirm --needed  niri xwayland-satellite wl-mirror wpaperd fuzzel waybar xdg-desktop-portal-gtk xdg-desktop-portal-gnome gnome-keyring 
+  yay -Syuq --noconfirm --needed  niri-git xwayland-satellite wl-mirror wpaperd fuzzel waybar xdg-desktop-portal-gtk xdg-desktop-portal-gnome gnome-keyring 
   dconf write /org/gnome/desktop/interface/color-scheme '"prefer-dark"'
 fi
 

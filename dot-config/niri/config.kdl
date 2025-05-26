@@ -2,7 +2,7 @@ spawn-at-startup "mako"
 spawn-at-startup "waybar"
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "syncthing --no-browser"
-// spawn-at-startup "wpaperd"
+spawn-at-startup "wpaperd"
 
 environment {
     DISPLAY ":0"
@@ -27,12 +27,12 @@ input {
 
 output "Samsung Electric Company S24D332 0x59325956" {
     mode "1920x1080@74.973"
-    position x=0 y=0
+    position x=1360 y=0
 }
 
 output "PNP(AOC) AOC LCD 0x01010101" {
     mode "1360x768@59.799"
-    position x=1920 y=0
+    position x=0 y=0
 }
 
 layout {
