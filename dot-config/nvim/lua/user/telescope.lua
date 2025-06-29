@@ -7,9 +7,10 @@ function M.config()
   local wk = require "which-key"
   wk.add {
     { "<leader>fb", "<cmd>Telescope buffers previewer=false<cr>", desc = "Buffer" },
-    { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Files" },
+    { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "File" },
     { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent File" },
     { "<leader>ft", "<cmd>Telescope live_grep<cr>", desc = "Text" },
+    { "<leader>fo", "<cmd>Telescope find_files cwd=~/Documents/Vault/<CR>", desc = "Obsidian File" },
   }
 
   local icons = require "user.icons"

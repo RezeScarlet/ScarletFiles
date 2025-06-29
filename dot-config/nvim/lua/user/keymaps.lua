@@ -1,7 +1,6 @@
 local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
-keymap("n", "<Space>", "", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
@@ -45,9 +44,33 @@ vim.cmd [[:amenu 10.100 mousemenu.Goto\ Definition <cmd>lua vim.lsp.buf.definiti
 vim.cmd [[:amenu 10.110 mousemenu.References <cmd>lua vim.lsp.buf.references()<CR>]]
 -- vim.cmd [[:amenu 10.120 mousemenu.-sep- *]]
 
-vim.keymap.set("n", "<RightMouse>", "<cmd>:popup mousemenu<CR>")
+keymap("n", "<RightMouse>", "<cmd>:popup mousemenu<CR>")
 --
 -- more good
 keymap({ "n", "o", "x" }, "<s-h>", "^", opts)
 keymap({ "n", "o", "x" }, "<s-l>", "g_", opts)
-vim.api.nvim_set_keymap("t", "<C-;>", "<C-\\><C-n>", opts)
+keymap("t", "<C-;>", "<C-\\><C-n>", opts)
+
+-- Former keymaps defined by which-key
+keymap("n", "<leader>;", "<cmd>Alpha<CR>", { desc = "Alpha" })
+keymap("n", "<leader>G", "<cmd>LazyGit<CR>", { desc = "Lazygit" })
+keymap("n", "<leader>L", "<cmd>Lazy<CR>", { desc = "Lazy.nvim" })
+keymap("n", "<leader>S", "<cmd>Spectre<CR>", { desc = "Spectre" })
+keymap("n", "<leader>w", "<cmd>confirm w<CR>", { desc = "Save" })
+keymap("n", "<leader>q", "<cmd>confirm q<CR>", { desc = "Quit" })
+keymap("n", "<leader>t", "<cmd>ToggleTerm direction=horizontal<CR>", { desc = "Terminal" })
+
+keymap("n", "<leader>y", "<cmd>%y<CR>", {desc = "Yank File"})
+keymap("n", "<leader>s", "<cmd>vs<CR>", {desc = "Vertical Split"})
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function()
+    local autocmd_Opts = { noremap = true, silent = true, buffer = true }
+
+    keymap("v", "<leader>i", 'c*<C-r><C-o>"*<Esc>', {desc = "Italic"}, autocmd_Opts)
+    keymap("v", "<leader>b", 'c**<C-r><C-o>"**<Esc>',{desc = "Bold"}, autocmd_Opts)
+    keymap("v", "<leader>s", 'c~~<C-r><C-o>"~~<Esc>',{desc = "Strikethrough"}, autocmd_Opts)
+
+  end,
+})

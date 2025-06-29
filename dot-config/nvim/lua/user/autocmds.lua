@@ -1,9 +1,4 @@
-vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
-  callback = function()
-    vim.cmd "set formatoptions-=cro"
-  end,
-})
-
+-- q to close some windows
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = {
     "netrw",
@@ -21,25 +16,27 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     "",
   },
   callback = function()
-    vim.cmd [[
-      nnoremap <silent> <buffer> q :close<CR>
-      set nobuflisted
-    ]]
+    vim.keymap.set("n", "q", "<cmd>close<CR>", { buffer = true, silent = true })
+    vim.opt_local.buflisted = false
   end,
 })
 
+
+-- Remove the command line windows from appearing by pressing q: q? q/
 vim.api.nvim_create_autocmd({ "CmdWinEnter" }, {
   callback = function()
-    vim.cmd "quit"
+    vim.api.nvim_command("quit")
   end,
 })
 
+-- Resize windows to fit the terminal when one is resized
 vim.api.nvim_create_autocmd({ "VimResized" }, {
   callback = function()
     vim.cmd "tabdo wincmd ="
   end,
 })
 
+-- Ask to reload file after changes outside nvim
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
   pattern = { "*" },
   callback = function()
@@ -47,12 +44,14 @@ vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
   end,
 })
 
+-- Highlight text after yank
 vim.api.nvim_create_autocmd({ "TextYankPost" }, {
   callback = function()
     vim.highlight.on_yank { higroup = "Visual", timeout = 40 }
   end,
 })
 
+-- Activate line wrap and spell checker for the files in pattern
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "gitcommit", "markdown", "NeogitCommitMessage" },
   callback = function()
@@ -61,26 +60,61 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   end,
 })
 
-vim.api.nvim_create_autocmd({ "CursorHold" }, {
-  callback = function()
-    local status_ok, luasnip = pcall(require, "luasnip")
-    if not status_ok then
+
+for _, bind in ipairs({ "grn", "gra", "gri", "grr", "gw" }) do
+  pcall(vim.keymap.del, "n", bind)
+end
+
+-- Options for the LSP
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(ev)
+    local bufnr = ev.buf
+    local client = vim.lsp.get_client_by_id(ev.data.client_id)
+    if not client then
       return
     end
-    if luasnip.expand_or_jumpable() then
-      -- ask maintainer for option to make this silent
-      -- luasnip.unlink_current()
-      vim.cmd [[silent! lua require("luasnip").unlink_current()]]
-    end
-  end,
-})
 
-vim.api.nvim_create_autocmd('LspAttach', {
-  callback = function(args)
-    local client = vim.lsp.get_client_by_id(args.data.client_id)
 
-    if client:supports_method('textDocument/completion') then
-      vim.lsp.completion.enable(true, client.id, args.buf, {autotrigger = true})
+    -- All the keymaps
+    local keymap = vim.keymap.set
+    local lsp = vim.lsp
+    local opts = { silent = true, buffer = bufnr }
+    local function opt(desc, others)
+      return vim.tbl_extend("force", opts, { desc = desc }, others or {})
     end
+
+    if client:supports_method('textDocument/formatting') then
+      keymap("n", "<leader>lf", function()
+        lsp.buf.format({ async = true })
+      end, opt("Format file"))
+    end
+
+    keymap("n", "gd", lsp.buf.definition, opt("Go to definition"))
+    keymap("n", "gi", function() lsp.buf.implementation({ border = "single" }) end, opt("Go to implementation"))
+    keymap("n", "gr", lsp.buf.references, opt("Show References"))
+    keymap("n", "gl", vim.diagnostic.open_float, opt("Open diagnostic in float"))
+    keymap("n", "<C-k>", lsp.buf.signature_help, opts)
+    keymap("n", "<Leader>la", lsp.buf.code_action, opt("Code Action"))
+    keymap("n", "<Leader>lh", function() lsp.inlay_hint.enable(not lsp.inlay_hint.is_enabled({})) end,
+      opt("Toggle Inlayhints"))
+    keymap("n", "<Leader>li", vim.cmd.LspInfo, opt("LspInfo"))
+    keymap("n", "<Leader>ll", lsp.codelens.run, opt("Run CodeLens"))
+    keymap("n", "<Leader>lr", lsp.buf.rename, opt("Rename"))
+    -- diagnostic mappings
+    keymap("n", "<Leader>dD", function()
+      local ok, diag = pcall(require, "rj.extras.workspace-diagnostic")
+      if ok then
+        for _, cur_client in ipairs(vim.lsp.get_clients({ bufnr = 0 })) do
+          diag.populate_workspace_diagnostics(cur_client, 0)
+        end
+        vim.notify("INFO: Diagnostic populated")
+      end
+    end, opt("Popluate diagnostic for the whole workspace"))
+    keymap("n", "<Leader>dn", function() vim.diagnostic.jump({ count = 1, float = true }) end, opt("Next Diagnostic"))
+    keymap("n", "<Leader>dp", function() vim.diagnostic.jump({ count = -1, float = true }) end, opt("Prev Diagnostic"))
+    keymap("n", "<Leader>dq", vim.diagnostic.setloclist, opt("Diagnostic List"))
+    keymap("n", "<Leader>dv", function()
+      vim.diagnostic.config({ virtual_lines = not vim.diagnostic.config().virtual_lines })
+    end, opt("Toggle diagnostic virtual_lines"))
   end,
 })

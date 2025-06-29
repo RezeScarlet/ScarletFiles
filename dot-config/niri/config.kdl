@@ -1,7 +1,7 @@
 spawn-at-startup "mako"
 spawn-at-startup "waybar"
 spawn-at-startup "xwayland-satellite"
-spawn-at-startup "syncthing --no-browser"
+spawn-at-startup "syncthing -no-browser"
 spawn-at-startup "wpaperd"
 
 environment {
@@ -22,6 +22,9 @@ input {
         accel-speed 0.8
         accel-profile "flat"
         scroll-method "edge"
+    }
+    mouse {
+      scroll-factor 0.4
     }
 }
 
@@ -125,6 +128,8 @@ binds {
     Mod+D hotkey-overlay-title="Spawn Fuzzel" { spawn "fuzzel"; }
     Mod+E hotkey-overlay-title="Spawn Yazi"{ spawn "kitty" "fish" "-C yy"; }
     Mod+N { spawn "kitty" "nvim"; }
+    Mod+O { spawn "kitty" "nvim" "~/Documents/Vault/"; }
+    Mod+Shift+O { spawn "obsidian"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }

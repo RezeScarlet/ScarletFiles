@@ -18,7 +18,8 @@ function M.config()
       "NvimTree",
       "Trouble",
       "text",
-      "kdl"
+      "kdl",
+      "markdown",
     },
     char = icons.ui.LineMiddle,
     context_char = icons.ui.LineMiddle,

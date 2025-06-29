@@ -44,10 +44,11 @@ function M.config()
   dashboard.section.buttons.val = {
     button("f", icons.ui.Files .. " Find file", ":Telescope find_files <CR>"),
     button("n", icons.ui.NewFile .. " New file", ":ene <BAR> startinsert <CR>"),
-    button("p", icons.git.Repo .. " Find project", ":lua require('telescope').extensions.projects.projects()<CR>"),
+    button("p", icons.ui.Package .. " Find project", ":lua require('telescope').extensions.projects.projects()<CR>"),
     button("r", icons.ui.History .. " Recent files", ":Telescope oldfiles <CR>"),
     button("t", icons.ui.Text .. " Find text", ":Telescope live_grep <CR>"),
     button("c", icons.ui.Gear .. " Config", ":e ~/.config/nvim/init.lua <CR>"),
+    button("o", icons.ui.Project .. " Obsidian Vault", ":Telescope find_files cwd=~/Documents/Vault/<CR>"),
     button("q", icons.ui.SignOut .. " Quit", ":qa<CR>"),
   }
   local function footer()
@@ -91,6 +92,7 @@ function M.config()
     ]]
     end,
   })
+
 end
 
 return M

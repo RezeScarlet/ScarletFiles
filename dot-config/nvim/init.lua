@@ -6,14 +6,13 @@ spec "user.colorscheme"
 spec "user.alpha" -- Dashboard
 spec "user.treesitter"
 spec "user.mason"
--- spec "user.lspconfig" -- Language server manager
-spec "user.cmp"        -- Completion
+spec "user.blink-cmp" -- Completion 2
 spec "user.telescope"
-spec "user.none-ls"    -- Formatter
+-- spec "user.none-ls"    -- Formatter
 spec "user.illuminate" -- Shows similar words
 spec "user.gitsigns"   -- Git indicator on right
 spec "user.whichkey"
-spec "user.nvimtree"
+-- spec "user.nvimtree"
 spec "user.comment" -- Comment line and block
 spec "user.lualine" -- Nice bar
 spec "user.harpoon"
@@ -32,15 +31,13 @@ spec "user.spectre"
 spec "user.todocomments"
 spec "user.autosave"
 -- spec "user.keys" -- Display Keys
--- spec "user.vimtex"
 spec "user.vim-wakatime"
--- spec "user.vim-dadbod-ui" -- Data Base stuff
--- spec "user.nvim-java"
 spec "user.nvim-jdtls"
 spec "user.satellite"
 spec "user.nvim-conda"
 spec "user.nvim-spider"
 spec "user.obsidian-nvim"
 spec "user.render-markdown"
+spec "user.yazi"
+-- spec "user.snacks"
 require "user.lazy"
-

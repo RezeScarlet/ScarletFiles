@@ -41,7 +41,8 @@ vim.opt.fillchars = vim.opt.fillchars + "eob: "
 vim.opt.fillchars:append {
   stl = " ",
 }
-
+vim.opt.spell = true
+vim.opt.spelllang = {"pt_br", "en"}
 vim.opt.shortmess:append "c"
 
 vim.cmd "set whichwrap+=<,>,[,],h,l"
@@ -50,8 +51,9 @@ vim.cmd [[set iskeyword+=-]]
 vim.g.netrw_banner = 0
 vim.g.netrw_mouse = 2
 
+
 -- LSP
-vim.lsp.enable { "luals", "clangd", "pylsp", "emmet-language-server" }
+vim.lsp.enable { "luals", "clangd", "basedpyright", "emmet-language-server", "CSSls", "css_variables", "html" }
 local icons = require "user.icons"
 vim.diagnostic.config {
   virtual_lines = true,
@@ -63,8 +65,7 @@ vim.diagnostic.config {
       [vim.diagnostic.severity.INFO]  = icons.diagnostics.BoldInformation,
     },
   },
-  update_in_insert = true,
+  update_in_insert = false,
   underline = true,
   severity_sort = true,
-
 }

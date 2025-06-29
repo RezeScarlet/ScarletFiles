@@ -1,4 +1,4 @@
-return {
+M = {
   "obsidian-nvim/obsidian.nvim",
   version = "*",
   lazy = true,
@@ -9,8 +9,6 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
   },
-  ---@module 'obsidian'
-  ---@type obsidian.config.ClientOpts
   opts = {
     workspaces = {
       {
@@ -20,18 +18,24 @@ return {
     },
 
     completion = {
-      nvim_cmp = true,
-      blink = false,
+      nvim_cmp = false,
+      blink = true,
       min_chars = 2,
     },
 
     new_notes_location = "current_dir",
 
-    -- Either 'wiki' or 'markdown'.
     preferred_link_style = "wiki",
 
-    -- Optional, boolean or a function that takes a filename and returns a boolean.
-    -- `true` indicates that you don't want obsidian.nvim to manage frontmatter.
     disable_frontmatter = true,
+    ui = {
+      checkboxes = {
+        [" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
+        ["x"] = { char = "", hl_group = "ObsidianDone" },
+      },
+    },
   },
 }
+
+
+return M
