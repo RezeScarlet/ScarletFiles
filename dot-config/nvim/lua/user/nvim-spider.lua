@@ -1,4 +1,4 @@
-return {
+M = {
   "chrisgrieser/nvim-spider",
   -- lazy = true,
   keys = {
@@ -7,3 +7,11 @@ return {
     { "b", "<cmd>lua require('spider').motion('b')<CR>", mode = { "n", "o", "x" } },
   },
 }
+
+function M.config()
+  require("spider").setup {
+    skipInsignificantPunctuation = false,
+  }
+end
+
+return M;

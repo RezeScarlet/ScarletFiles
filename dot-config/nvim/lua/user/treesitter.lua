@@ -1,11 +1,12 @@
 local M = {
   "nvim-treesitter/nvim-treesitter",
-  event = { "BufReadPost", "BufNewFile" },
+  lazy = false,
+  branch = "main",
   build = ":TSUpdate",
 }
 
 function M.config()
-  require("nvim-treesitter.configs").setup {
+  require("nvim-treesitter").setup {
     ensure_installed = { "lua", "cpp" },
     auto_install = true,
     highlight = { enable = true },

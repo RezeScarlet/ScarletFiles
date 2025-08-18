@@ -10,10 +10,11 @@ function M.config()
     heading = {
       icons = { " 󰬺 ", " 󰬻 ", " 󰬼 ", " 󰬽 ", " 󰬾 ", " 󰬿 " },
       border = true,
-      position = "inline",
-      width = "full",
-      left_pad = 0.5,
-      right_pad = 0.2,
+      border_virtual = true,
+      -- position = "inline",
+      -- width = "full",
+      -- left_pad = 0.5,
+      -- right_pad = 0.2,
     },
     checkbox = {
       customs = {},
