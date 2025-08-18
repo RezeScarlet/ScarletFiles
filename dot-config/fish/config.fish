@@ -11,29 +11,22 @@ if status --is-interactive
     rm -f -- "$tmp"
   end
 
-set -gx EDITOR nvim
+  set -x JAVA_HOME /usr/lib/jvm/java-24-openjdk
+  set -x PATH $PATH $JAVA_HOME/bin
+  set -gx EDITOR nvim
 
-alias ":q"="exit"
-alias "v"="nvim"
+  alias :q "exit"
+  alias v "nvim"
+  alias y "yay --noconfirm && flatpak update"
+  alias clean "yay -Yc"
+  alias bean "wmname LG3D && netbeans"
+
 end
 
 zoxide init fish | source
 alias "cd"="z"
 
 # >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-
-# if test -f /opt/miniconda3/bin/conda
-#     eval /opt/miniconda3/bin/conda "shell.fish" "hook" $argv | source
-# else
-#   echo "1"
-#     if test -f "/opt/miniconda3/etc/fish/conf.d/conda.fish"
-#         . "/opt/miniconda3/etc/fish/conf.d/conda.fish"
-#       echo "2"
-#     else
-#         set -x PATH "/opt/miniconda3/bin" $PATH
-#     end
-# end
 function conda
     if test -f /opt/miniconda3/bin/conda
         eval /opt/miniconda3/bin/conda "shell.fish" "hook" $argv | source
