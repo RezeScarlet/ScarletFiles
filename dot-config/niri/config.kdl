@@ -1,8 +1,8 @@
 spawn-at-startup "mako"
 spawn-at-startup "waybar"
 spawn-at-startup "xwayland-satellite"
-spawn-at-startup "syncthing -no-browser"
 spawn-at-startup "wpaperd"
+spawn-at-startup "syncthing" "--no-browser"
 
 environment {
     DISPLAY ":0"
@@ -28,14 +28,13 @@ input {
     }
 }
 
-output "Samsung Electric Company S24D332 0x59325956" {
-    mode "1920x1080@74.973"
-    position x=1360 y=0
-}
+// output "Samsung Electric Company S24D332 0x59325956" {
+//     mode "1920x1080@74.973"
+//     position x=1360 y=0
+// }
 
-output "PNP(DTV) STI 0x00000001" {
-    mode "1920x1080@60.000"
-    position x=0 y=0
+output "HDMI-A-1" {
+  off
 }
 
 layout {
@@ -130,6 +129,10 @@ binds {
     Mod+N { spawn "kitty" "nvim"; }
     Mod+O { spawn "kitty" "nvim" "~/Documents/Vault/"; }
     Mod+Shift+O { spawn "obsidian"; }
+    // Mod+m { spawn "kitty" "rofi" "-show" "power-menu" "-modi" "'power-menu:rofi-power-menu --choices=shutdown/reboot/logout/'" "-theme-str" "'window {width: 10em;}listview {columns: 1; lines: 3;} inputbar {enabled: false;}'"; }
+    Mod+m { spawn "rofi" "-show" "power-menu" "-modi" "power-menu:rofi-power-menu --choices=shutdown/reboot/logout/" "-theme-str" "window {width: 10em;} listview {columns: 1; lines: 3;} inputbar {enabled: false;}"; }
+
+
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
