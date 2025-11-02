@@ -4,16 +4,12 @@ spawn-at-startup "xwayland-satellite"
 spawn-at-startup "wpaperd"
 spawn-at-startup "syncthing" "--no-browser"
 
-environment {
-    DISPLAY ":0"
-}
-
 input {
     keyboard {
         xkb {
             model "abnt2"
             layout "br"
-            options "caps:swapescape, altwin:swap_alt_win"
+            options "caps:swapescape, altwin:swap_lalt_lwin"
         }
     }
 
@@ -23,18 +19,16 @@ input {
         accel-profile "flat"
         scroll-method "edge"
     }
-    mouse {
-      scroll-factor 0.4
-    }
 }
 
-// output "Samsung Electric Company S24D332 0x59325956" {
-//     mode "1920x1080@74.973"
-//     position x=1360 y=0
-// }
+output "Samsung Electric Company S24D332 0x59325956" {
+    mode "1920x1080@74.973"
+    position x=1920 y=0
+}
 
 output "HDMI-A-1" {
-  off
+    mode "1920x1080@60"
+    position x=0 y=0
 }
 
 layout {
@@ -126,6 +120,7 @@ binds {
     Mod+F { spawn "zen-browser"; }
     Mod+D hotkey-overlay-title="Spawn Fuzzel" { spawn "fuzzel"; }
     Mod+E hotkey-overlay-title="Spawn Yazi"{ spawn "kitty" "fish" "-C yy"; }
+    Mod+Shift+E hotkey-overlay-title="Spawn Files"{ spawn "nautilus"; }
     Mod+N { spawn "kitty" "nvim"; }
     Mod+O { spawn "kitty" "nvim" "~/Documents/Vault/"; }
     Mod+Shift+O { spawn "obsidian"; }
@@ -237,7 +232,6 @@ binds {
     Ctrl+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
 
-    Mod+Shift+E { quit; }
     Ctrl+Alt+Delete { quit; }
 
     Mod+Shift+P { power-off-monitors; }

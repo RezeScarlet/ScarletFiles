@@ -11,7 +11,7 @@ if status --is-interactive
     rm -f -- "$tmp"
   end
 
-  set -x JAVA_HOME /usr/lib/jvm/java-24-openjdk
+  set -x JAVA_HOME /usr/lib/jvm/java-17-openjdk
   set -x PATH $PATH $JAVA_HOME/bin
   set -gx EDITOR nvim
 
