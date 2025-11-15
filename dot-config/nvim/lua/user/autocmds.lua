@@ -116,5 +116,13 @@ vim.api.nvim_create_autocmd("LspAttach", {
     keymap("n", "<Leader>dv", function()
       vim.diagnostic.config({ virtual_lines = not vim.diagnostic.config().virtual_lines })
     end, opt("Toggle diagnostic virtual_lines"))
+    keymap("n", "<Leader>dt", function()
+      vim.diagnostic.config({
+        virtual_text = not vim.diagnostic.config().virtual_text,
+        underline = not vim.diagnostic.config().underline,
+        signs = not vim.diagnostic.config().signs
+
+      })
+    end, opt("Toggle diagnostics"))
   end,
 })

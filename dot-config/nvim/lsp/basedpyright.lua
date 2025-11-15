@@ -12,6 +12,7 @@ return {
     basedpyright = {
       disableOrganizeImports = true,
       analysis = {
+        extraPaths = {"/home/rezescarlet/.local/share/pipx/venvs/pgzero/lib/python3.13/site-packages"},
         autoSearchPaths = true,
         autoImportCompletions = true,
         useLibraryCodeForTypes = true,

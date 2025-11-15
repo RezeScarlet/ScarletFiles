@@ -8,7 +8,6 @@ return {
 	filetypes = {
 		"html",
 		"templ",
-    "jsp"
 	},
 	root_markers = {
 		"package.json",

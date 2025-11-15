@@ -14,7 +14,6 @@ return {
 		"scss",
 		"typescriptreact",
 		"htmlangular",
-    "jsp"
 	},
 	root_markers = { ".git" },
 }
