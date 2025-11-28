@@ -8,10 +8,11 @@
 
 window#waybar {
   color: @text;
-  border: solid;
+  border-right: solid;
+  
   border-color: @love;
   border-width: 2px;
-  border-radius: 6px;
+  border-radius: 0 6px 6px 0;
   background: @base;
   /* padding: 12px; */
 }

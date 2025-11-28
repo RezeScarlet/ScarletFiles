@@ -15,9 +15,10 @@ input {
 
     touchpad {
         natural-scroll
-        accel-speed 0.8
+        accel-speed 1
         accel-profile "flat"
-        scroll-method "edge"
+        scroll-method "two-finger"
+        tap
     }
 }
 
@@ -53,7 +54,7 @@ layout {
         off
     }
     shadow {
-      on
+      off
       softness 14
       spread 1
       offset x=10 y=10
@@ -117,14 +118,13 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Mod+T { spawn "kitty"; }
-    Mod+F { spawn "zen-browser"; }
+    Mod+F { spawn "helium-browser"; }
     Mod+D hotkey-overlay-title="Spawn Fuzzel" { spawn "fuzzel"; }
     Mod+E hotkey-overlay-title="Spawn Yazi"{ spawn "kitty" "fish" "-C yy"; }
     Mod+Shift+E hotkey-overlay-title="Spawn Files"{ spawn "nautilus"; }
     Mod+N { spawn "kitty" "nvim"; }
     Mod+O { spawn "kitty" "nvim" "~/Documents/Vault/"; }
     Mod+Shift+O { spawn "obsidian"; }
-    // Mod+m { spawn "kitty" "rofi" "-show" "power-menu" "-modi" "'power-menu:rofi-power-menu --choices=shutdown/reboot/logout/'" "-theme-str" "'window {width: 10em;}listview {columns: 1; lines: 3;} inputbar {enabled: false;}'"; }
     Mod+m { spawn "rofi" "-show" "power-menu" "-modi" "power-menu:rofi-power-menu --choices=shutdown/reboot/logout/" "-theme-str" "window {width: 10em;} listview {columns: 1; lines: 3;} inputbar {enabled: false;}"; }
 
 
@@ -136,6 +136,8 @@ binds {
     XF86AudioPrev        allow-when-locked=true { spawn "playerctl" "previous"; }
     XF86AudioNext        allow-when-locked=true { spawn "playerctl" "next"; }
     XF86AudioPlay       allow-when-locked=true { spawn "playerctl" "play-pause"; }
+    XF86MonBrightnessUp     allow-when-locked=true { spawn "brightnessctl" "set" "10%+"; }
+    XF86MonBrightnessDown     allow-when-locked=true { spawn "brightnessctl" "set" "10%-"; }
 
     Mod+Q { close-window; }
 

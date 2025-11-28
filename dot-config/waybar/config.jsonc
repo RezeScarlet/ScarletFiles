@@ -2,7 +2,7 @@
   "layer": "top",
   "position": "left",
   "width": 10,
-  "margin": "6 0 6 6",
+  "margin": "0 0 0 0",
   "spacing": 4,
   "modules-left": ["niri/workspaces"],
   "modules-center": ["custom/sep"],
@@ -45,7 +45,6 @@
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
   },
   "battery": {
-    "bat": "BAT0",
     "interval": 60,
     "states": {
       "warning": 30,

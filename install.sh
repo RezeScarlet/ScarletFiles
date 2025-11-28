@@ -17,7 +17,7 @@ fi
 systemctl enable paccache.timer
 systemctl start paccache.timer
 
-# TODO ly install, grub theme, laptop app list, set gtk, font
+# TODO ly install, grub theme, laptop app list, set gtk, font, fix yay install 
 echo "========================="
 echo "=== App Installation  ==="
 echo "========================="
@@ -48,8 +48,7 @@ echo
   if [ "$ans" != "n" ];
 then
   # Apps for both setups
-  yay -Syuq --noconfirm --needed audiorelay vesktop-bin vlc ncpamixer bluetui thunar qbittorrent btop obsidian ttf-cascadia-code-nerd ttf-nerd-fonts-symbols-mono git neovim github-cli fish kitty zen-browser-bin yazi-nightly-bin zoxide p7zip flameshot texlive zathura ly lazygit stow feh bibata-cursor-theme-bin nwg-look fzf cava
-  systemctl enable ly.service
+  yay -Syuq --noconfirm --needed vesktop-bin celluloid bluetui thunar qbittorrent btop obsidian ttf-cascadia-code-nerd ttf-nerd-fonts-symbols-mono git neovim github-cli fish kitty helium-bin yazi-nightly-bin zoxide p7zip flameshot ly lazygit stow bibata-cursor-theme-bin fzf systemctl enable ly.service
   chsg -s /bin/fish
 
   # Fish theme
@@ -78,7 +77,7 @@ echo
 
   if [ "$ans" != "n" ];
   then
-   yay -Syuq --noconfirm --needed ncspot 
+   yay -Syuq --noconfirm --needed ncspot light
   fi
 fi
 
