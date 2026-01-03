@@ -2,7 +2,7 @@
   "layer": "top",
   "position": "left",
   "width": 10,
-  "margin": "0 0 0 0",
+  "margin": "6 0 6 6",
   "spacing": 4,
   "modules-left": ["niri/workspaces"],
   "modules-center": ["custom/sep"],

@@ -6,7 +6,7 @@ cd ~/
 
 if ! command -v yay &> /dev/null;
 then
-  sudo pacman -S --needed git base-devel
+  sudo pacman -S --needed git base-devel noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
   git clone https://aur.archlinux.org/yay.git
   cd yay
   makepkg -si
@@ -17,7 +17,8 @@ fi
 systemctl enable paccache.timer
 systemctl start paccache.timer
 
-# TODO ly install, grub theme, laptop app list, set gtk, font, fix yay install 
+
+# TODO ly config, grub theme, rework app lists, fix yay install, set zram, set cachyOS Kernel
 echo "========================="
 echo "=== App Installation  ==="
 echo "========================="
@@ -48,7 +49,7 @@ echo
   if [ "$ans" != "n" ];
 then
   # Apps for both setups
-  yay -Syuq --noconfirm --needed vesktop-bin celluloid bluetui thunar qbittorrent btop obsidian ttf-cascadia-code-nerd ttf-nerd-fonts-symbols-mono git neovim github-cli fish kitty helium-bin yazi-nightly-bin zoxide p7zip flameshot ly lazygit stow bibata-cursor-theme-bin fzf systemctl enable ly.service
+  yay -Syuq --noconfirm --needed nwg-look vesktop-bin celluloid bluetui qbittorrent btop obsidian syncthing ttf-cascadia-code-nerd ttf-nerd-fonts-symbols-mono git neovim github-cli fish kitty helium-bin yazi-nightly-bin zoxide p7zip flameshot ly lazygit stow bibata-cursor-theme-bin fzf systemctl enable ly.service
   chsg -s /bin/fish
 
   # Fish theme

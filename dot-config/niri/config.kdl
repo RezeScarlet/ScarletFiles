@@ -27,7 +27,13 @@ output "Samsung Electric Company S24D332 0x59325956" {
     position x=1920 y=0
 }
 
+output "eDP-1" {
+    mode "1920x1080@60"
+    position x=0 y=0
+}
+
 output "HDMI-A-1" {
+    // off
     mode "1920x1080@60"
     position x=0 y=0
 }
@@ -90,36 +96,41 @@ window-rule {
   }
 }
 
-// Shadows for Fuzzel
+// Corner for Fuzzel
 layer-rule {
     match namespace="^launcher$"
     
-  shadow {
-    on
-    color "#eb6f92"
-    softness 12
-    spread 1
-    offset x=0 y=0
-  }
 
     geometry-corner-radius 2
 }
 
 window-rule {
+    match app-id="wofi"
+    
+    default-floating-position x=0 y=90 relative-to="bottom"
+    
+}
+
+window-rule {
   match app-id="zen"
+  match app-id="floorp"
   match app-id="obsidian"
 
   open-maximized true
 
 }
 
+window-rule {
+    match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
+    default-floating-position x=10 y=10 relative-to="bottom-right"
+}
 
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Mod+T { spawn "kitty"; }
-    Mod+F { spawn "helium-browser"; }
-    Mod+D hotkey-overlay-title="Spawn Fuzzel" { spawn "fuzzel"; }
+    Mod+F { spawn "floorp"; }
+    Mod+D hotkey-overlay-title="Spawn wofi" { spawn "wofi"; }
     Mod+E hotkey-overlay-title="Spawn Yazi"{ spawn "kitty" "fish" "-C yy"; }
     Mod+Shift+E hotkey-overlay-title="Spawn Files"{ spawn "nautilus"; }
     Mod+N { spawn "kitty" "nvim"; }

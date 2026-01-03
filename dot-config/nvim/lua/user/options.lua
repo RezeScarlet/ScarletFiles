@@ -53,7 +53,7 @@ vim.g.netrw_mouse = 2
 
 
 -- LSP
-vim.lsp.enable { "luals", "clangd", "basedpyright", "emmet-language-server", "CSSls", "css_variables", "html", "vtsls" }
+vim.lsp.enable { "luals", "clangd", "basedpyright", "emmet-language-server", "CSSls", "css_variables", "html", "vtsls", "qmlls"}
 local icons = require "user.icons"
 vim.diagnostic.config {
   virtual_text = true,

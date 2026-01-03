@@ -1,0 +1,16 @@
+mode=drun
+prompt=Apps
+term=kitty
+
+normal_window=true
+
+width=500
+height=450
+
+insensitive=true
+allow_images=true
+image_size=24
+gtk_dark=true
+
+x=0
+y=0
