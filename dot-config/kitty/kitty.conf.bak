@@ -10,10 +10,4 @@ background_opacity 0.95
 # hide_window_decorations yes
 confirm_os_window_close 0
 cursor_trail 1
-# cursor #eb6f92
-
-
-# BEGIN_KITTY_THEME
-# Noctalia
-include current-theme.conf
-# END_KITTY_THEME
+cursor #eb6f92
