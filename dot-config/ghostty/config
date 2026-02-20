@@ -1,0 +1,20 @@
+font-family = "CaskaydiaCove Nerd Font Mono"
+font-size = 9
+
+window-padding-x = 25
+window-padding-y = 25
+background-opacity = 0.95
+background-image-opacity = 95
+
+shell-integration = fish
+shell-integration-features = no-cursor
+shell-integration-features = ssh-terminfo
+
+window-padding-balance = true
+
+confirm-close-surface = false
+
+cursor-style = block
+cursor-color = #eb6f92
+
+theme = noctalia
