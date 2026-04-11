@@ -15,6 +15,5 @@ window-padding-balance = true
 confirm-close-surface = false
 
 cursor-style = block
-cursor-color = #eb6f92
 
 theme = noctalia

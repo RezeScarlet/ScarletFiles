@@ -42,7 +42,7 @@ vim.opt.fillchars:append {
   stl = " ",
 }
 vim.opt.spell = true
-vim.opt.spelllang = {"pt_br", "en"}
+vim.opt.spelllang = {"pt", "en"}
 vim.opt.shortmess:append "c"
 
 vim.cmd "set whichwrap+=<,>,[,],h,l"

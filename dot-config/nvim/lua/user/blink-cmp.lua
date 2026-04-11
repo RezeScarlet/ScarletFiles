@@ -6,7 +6,8 @@ return {
     "saghen/blink.cmp",
     "nvim-telescope/telescope.nvim",
     "nvim-treesitter/nvim-treesitter",
-    "MeanderingProgrammer/render-markdown.nvim"
+    "MeanderingProgrammer/render-markdown.nvim",
+    "krissen/blink-cmp-bibtex",
   },
 
   version = "1.*",
@@ -31,7 +32,7 @@ return {
     },
 
     sources = {
-      default = { "spell", "lsp", "path", "snippets", "buffer" },
+      default = { "spell", "lsp", "path", "snippets", "buffer", "bibtex" },
       providers = {
         spell = {
           name = 'Spell',
@@ -57,6 +58,16 @@ return {
               end
               return in_spell_capture
             end,
+          },
+        },
+       bibtex = {
+          module = "blink-cmp-bibtex",
+          name = "BibTeX",
+          min_keyword_length = 2,
+          score_offset = 10,
+          async = true,
+          opts = {
+            -- provider-level overrides (optional)
           },
         },
       },

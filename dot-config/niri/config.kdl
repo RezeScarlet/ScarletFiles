@@ -5,6 +5,10 @@
 spawn-at-startup "qs" "-c" "noctalia-shell"
 spawn-at-startup "syncthing" "--no-browser"
 
+environment {
+    GTK_IM_MODULE "simple"
+}
+
 input {
     keyboard {
         xkb {
