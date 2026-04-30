@@ -1,3 +1,4 @@
+vim.opt.smoothscroll = true
 vim.opt.backup = false -- creates a backup file
 vim.opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
 vim.opt.cmdheight = 1 -- more space in the neovim command line for displaying messages
@@ -53,7 +54,7 @@ vim.g.netrw_mouse = 2
 
 
 -- LSP
-vim.lsp.enable { "luals", "clangd", "basedpyright", "emmet-language-server", "CSSls", "css_variables", "html", "vtsls", "qmlls"}
+vim.lsp.enable { "luals", "clangd", "basedpyright", "emmet-language-server", "CSSls", "css_variables", "html", "vtsls", "qmlls", "ltex-plus"}
 local icons = require "user.icons"
 vim.diagnostic.config {
   virtual_text = true,

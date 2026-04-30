@@ -3,7 +3,6 @@ return {
   dependencies = {
     "ribru17/blink-cmp-spell",
     "rafamadriz/friendly-snippets",
-    "saghen/blink.cmp",
     "nvim-telescope/telescope.nvim",
     "nvim-treesitter/nvim-treesitter",
     "MeanderingProgrammer/render-markdown.nvim",
@@ -11,8 +10,6 @@ return {
   },
 
   version = "1.*",
-  ---@module 'blink.cmp'
-  ---@type blink.cmp.Config
   opts = {
     keymap = {
       ["<C-k>"] = { "select_prev", "fallback" },
@@ -32,43 +29,18 @@ return {
     },
 
     sources = {
-      default = { "spell", "lsp", "path", "snippets", "buffer", "bibtex" },
+      default = { "lsp", "omni", "spell", "path", "snippets", "buffer", "bibtex" },
       providers = {
         spell = {
           name = 'Spell',
           module = 'blink-cmp-spell',
-          opts = {
-            -- EXAMPLE: Only enable source in `@spell` captures, and disable it
-            -- in `@nospell` captures.
-            use_cmp_spell_sorting = true,
-            enable_in_context = function()
-              local curpos = vim.api.nvim_win_get_cursor(0)
-              local captures = vim.treesitter.get_captures_at_pos(
-                0,
-                curpos[1] - 1,
-                curpos[2] - 1
-              )
-              local in_spell_capture = false
-              for _, cap in ipairs(captures) do
-                if cap.capture == 'spell' then
-                  in_spell_capture = true
-                elseif cap.capture == 'nospell' then
-                  return false
-                end
-              end
-              return in_spell_capture
-            end,
-          },
         },
-       bibtex = {
+        bibtex = {
           module = "blink-cmp-bibtex",
           name = "BibTeX",
           min_keyword_length = 2,
           score_offset = 10,
           async = true,
-          opts = {
-            -- provider-level overrides (optional)
-          },
         },
       },
     },

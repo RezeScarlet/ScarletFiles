@@ -9,7 +9,7 @@ spec "user.mason"
 spec "user.blink-cmp" -- Completion
 spec "user.telescope"
 spec "user.illuminate" -- Shows similar words
-spec "user.gitsigns"   -- Git indicator on right
+spec "user.gitsigns"   -- Git indicator on left
 spec "user.whichkey"
 spec "user.lualine"    -- Nice bar
 spec "user.harpoon"
@@ -26,7 +26,6 @@ spec "user.todocomments"
 spec "user.autosave"
 spec "user.vim-wakatime"
 spec "user.satellite"
--- spec "user.nvim-conda"
 spec "user.nvim-spider"
 spec "user.obsidian-nvim"
 spec "user.render-markdown"

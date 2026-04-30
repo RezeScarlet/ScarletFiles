@@ -1,10 +1,11 @@
 local M = {
   "lervag/vimtex",
-  lazy = false,     -- we don't want to lazy load VimTeX
+  lazy = false,
   init = function()
     vim.g.vimtex_view_method = "zathura"
-    vim.g.vimtex_compiler_method = 'tectonic'
-  end
+    vim.g.vimtex_compiler_method = "tectonic"
+    vim.g.vimtex_fold_enabled = 1
+    vim.g.vimtex_fold_types = { preamble = { enabled = true } }
+  end,
 }
-
-return M;
+return M
