@@ -457,12 +457,12 @@
     },
     "nightLight": {
         "autoSchedule": true,
-        "dayTemp": "6500",
-        "enabled": false,
+        "dayTemp": "4273",
+        "enabled": true,
         "forced": false,
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
-        "nightTemp": "3921"
+        "nightTemp": "3460"
     },
     "noctaliaPerformance": {
         "disableDesktopWidgets": true,
@@ -709,7 +709,7 @@
         "wallhavenCategories": "111",
         "wallhavenOrder": "desc",
         "wallhavenPurity": "100",
-        "wallhavenQuery": "rose",
+        "wallhavenQuery": "bridget",
         "wallhavenRatios": "16x9",
         "wallhavenResolutionHeight": "",
         "wallhavenResolutionMode": "atleast",

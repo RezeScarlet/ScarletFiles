@@ -5,7 +5,6 @@ include "./noctalia.kdl"
 // spawn-at-startup "xwayland-satellite"
 // spawn-at-startup "wpaperd"
 spawn-at-startup "qs" "-c" "noctalia-shell"
-spawn-at-startup "syncthing" "--no-browser"
 
 environment {
     GTK_IM_MODULE "simple"
