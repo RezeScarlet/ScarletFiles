@@ -93,6 +93,16 @@ screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 window-rule {
     geometry-corner-radius 20
     clip-to-geometry true
+    background-effect {
+      blur true
+  }
+}
+
+blur {
+  passes 1        // more passes = stronger blur (default: 3)
+  offset 1.0      // sample distance per pass (default: 3.0)
+  noise 0.05      // grain overlay (default: 0.02)
+  saturation 1.5  // color saturation boost (default: 1.5)
 }
 
 debug {
