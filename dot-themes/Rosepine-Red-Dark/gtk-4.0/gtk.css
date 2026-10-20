@@ -21,3 +21,5 @@
 @define-color sidebar_fg_color {{colors.on_surface.default.hex}};
 @define-color sidebar_border_color @window_bg_color;
 @define-color sidebar_backdrop_color @window_bg_color;
+
+@import url("noctalia.css");

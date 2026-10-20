@@ -1,10 +1,5 @@
 
-include "./noctalia.kdl"
-// spawn-at-startup "mako"
-// spawn-at-startup "waybar"
-// spawn-at-startup "xwayland-satellite"
-// spawn-at-startup "wpaperd"
-spawn-at-startup "qs" "-c" "noctalia-shell"
+spawn-at-startup "noctalia"
 
 environment {
     GTK_IM_MODULE "simple"
@@ -38,8 +33,9 @@ output "Samsung Electric Company S24D332 0x59325956" {
 }
 
 output "eDP-1" {
-    mode "1920x1080@60"
+    mode "1360x768@60"
     position x=0 y=0
+    scale 0.5
 }
 
 output "HDMI-A-1" {
@@ -130,7 +126,7 @@ layer-rule {
 
 // Set the overview wallpaper on the backdrop.
 layer-rule {
-  match namespace="^noctalia-overview*"
+  match namespace="^noctalia-backdrop*"
   place-within-backdrop true
 }
 
@@ -172,10 +168,10 @@ binds {
     // Mod+m { spawn "rofi" "-show" "power-menu" "-modi" "power-menu:rofi-power-menu --choices=shutdown/reboot/logout/" "-theme-str" "window {width: 10em;} listview {columns: 1; lines: 3;} inputbar {enabled: false;}"; }
 
 
-    Mod+D hotkey-overlay-title="Spawn Launcher" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle" ; }
-    Mod+S hotkey-overlay-title="Spawn Noctalia Settings" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "settings" "toggle" ; }
-    Mod+W hotkey-overlay-title="Spawn Noctalia Control Settings" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "controlCenter" "toggle" ; }
-    Mod+M hotkey-overlay-title="Spawn Noctalia Control Settings" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "sessionMenu" "toggle" ; }
+    Mod+D hotkey-overlay-title="Spawn Launcher" { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
+    Mod+S hotkey-overlay-title="Spawn Noctalia Settings" { spawn "noctalia" "msg" "settings-toggle" ; }
+    Mod+W hotkey-overlay-title="Spawn Noctalia Control Settings" { spawn "noctalia" "msg" "panel-toggle" "control-center" ; }
+    Mod+M hotkey-overlay-title="Spawn Noctalia Control Settings" { spawn "noctalia" "msg" "panel-toggle" "session" ; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+" ; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-" ; }
@@ -286,3 +282,5 @@ binds {
 
     Mod+Shift+P { power-off-monitors ; }
 }
+
+include "noctalia.kdl"
